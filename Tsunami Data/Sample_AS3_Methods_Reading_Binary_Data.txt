@@ -1,0 +1,131 @@
+//Ultimately, we need to read in the binary data.  We read in the binary data for use
+//in our ActionScript 3.0 data visualization project.
+
+//These are sample methods for reading in binary data in ActionScript 3.0.
+
+//For the Tsunami Data, use readString() to read in data on country and name; use readLon() and readLat() to read in longitude and latitude data; use readInt8() to read in data on source, magnitude, months, days, and tsunami intensities; use readInt32() to read in data on deaths; use readSignedInt16() to read in data on years and readInt 16() to read in data on injuries and damages.
+
+		private function readInt8():int {
+			while (stream.bytesAvailable < 1) {
+			}
+
+			return (stream.readByte() & 0xff);
+		}
+
+		private function readInt16():int {
+			//For unsigned int16
+			var int16:int;
+
+			while (stream.bytesAvailable < 2) {
+			}
+
+			int16 = (stream.readByte() & 0xff) << 8;
+			int16 = int16 + (stream.readByte() & 0xff);
+			return int16;
+		}
+		
+		private function readSignedInt16():int {
+			//For signed int16
+			var int16:int;
+
+			while (stream.bytesAvailable < 2) {
+			}
+
+			int16 = (stream.readByte() & 0xff) << 8;
+			int16 = int16 + (stream.readByte() & 0xff);
+			
+			if (int16 & 0x8000){
+				int16 = int16 + 0xffff0000;
+			}
+			
+			return int16;
+		}
+		
+		private function readInt32():int {
+			var int32:int;
+
+			while (stream.bytesAvailable < 4) {
+			}
+
+			int32 = (stream.readByte() & 0xff) << 24;
+			int32 = int32 + ((stream.readByte() & 0xff) << 16);
+			int32 = int32 + ((stream.readByte() & 0xff) << 8);
+			int32 = int32 + (stream.readByte() & 0xff);
+			return int32;
+		}
+
+		private function readLat():Number {
+			var fraction:int;
+			var i:int;
+			var f:Number;
+
+			while (stream.bytesAvailable < 3) {
+			}
+			
+			i = stream.readByte() & 0xff;
+			
+			if (i > 127) {
+				i = i - 256;
+				//number in the right range, -90 to + 90
+			}
+			
+			fraction = (stream.readByte() & 0xff) << 8;
+			fraction = fraction + (stream.readByte() & 0xff);
+			f = Number(fraction) / 65536.0;
+			
+			if (i < 0){
+				f = -f;
+			}
+			
+			return (Number(i) + f);
+		}
+		
+		private function readLon():Number {
+			var fraction:int;
+			var i:int;
+			var f:Number;
+
+			while (stream.bytesAvailable < 4) {
+			}
+
+			i = (stream.readByte() & 0xff) << 8;
+			i = i + (stream.readByte() & 0xff);
+			
+			if (i > 32767) {
+				i = i - 65536;
+				//number is between -180 and 180
+			}
+
+	    	fraction = (stream.readByte() & 0xff) << 8;
+			fraction = fraction + (stream.readByte() & 0xff);
+			f = Number(fraction) / 65536.0;
+			
+			if (i < 0){
+				f = -f;
+			}
+			
+			return (Number(i) + f);
+		}
+		
+		private function readString():String {
+			
+			var length:int = readInt8();
+			var s:String;
+			
+			if (length <= 0){
+				return "N/A";
+			}
+			
+			while (stream.bytesAvailable < length) {
+			}
+			
+			//return stream.readUTFBytes(length);
+			
+			s = stream.readUTFBytes(length);
+			
+			if (s == null || s.length == 0){
+				return "N/A";
+			} else {
+				return s;
+			}
+		}
