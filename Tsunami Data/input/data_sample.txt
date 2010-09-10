@@ -1,0 +1,37 @@
+The full dataset is available at usgs.gov.  The following is a sample of the tsunami data:
+
+Year	Month	Day	Prob.	Source	Magnitude Country		Name			Lat.	Long.	Tsunami Mag.    Tsunami Intens.	Deaths Injuries Damages
+
+1998	7	17	4	3	7.0	  PAPUA NEW GUINEA	Papua New Guinea	-2.96	141.93	N/A		N/A 		2183	1000	N/A
+
+Explanation:
+
+This is a tsunami incident that occured on July, 17th 1998 in Papua New Guinea at latitude -2.96 and longitude 141.93.  It was deemed a definite tsunami (see below).  The sources of the tsunami were an earthquake and a landslide.  The earthquake had a magnitude of the 7.0.  The magnitude and intensity of the tsunami were not available.  There were an estimated 2,183 deaths and 1,000 injuries
+due to the tsunami.  Monetary damages were not available.
+
+Further explanation of the data from the USGS:
+
+"Probable
+Validity of the actual tsunami occurrence is indicated by a numerical rating of the reports of that event:
+
+          4 = definite tsunami 
+          3 = probable tsunami 
+          2 = questionable tsunami 
+          1 = very doubtful tsunami 
+          0 = event that only caused a seiche or disturbance in an inland river 
+          -1 = erroneous entry 
+Source
+ The source of the tsunami:
+
+          0 = Unknown 
+          1 = Earthquake 
+          2 = Questionable Earthquake 
+          3 = Earthquake and Landslide 
+          4 = Volcano and Earthquake 
+          5 = Volcano, Earthquake, and Landslide 
+          6 = Volcano 
+          7 = Volcano and Landslide 
+          8 = Landslide 
+          9 = Meteorological 
+          10 = Explosion 
+          11 = Astronomical Tide"
