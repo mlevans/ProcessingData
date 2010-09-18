@@ -1,0 +1,52 @@
+//Ultimately, we need to read in the binary data.  We read in the binary data for use
+//in our ActionScript 3.0 data visualization project.
+
+//These are sample methods for reading in binary data in ActionScript 3.0.
+
+		import flash.net.URLStream; //import the URLStream class
+
+		private var stream:URLStream; //Define the variable stream of type URLStream
+
+		private function readInt8():int {
+			while (stream.bytesAvailable < 1) {
+			}
+
+			return (stream.readByte() & 0xff);
+		}
+
+		private function readInt16():int {
+			var int16:int;
+
+			while (stream.bytesAvailable < 2) {
+			}
+
+			int16 = (stream.readByte() & 0xff) << 8;
+			int16 = int16 + (stream.readByte() & 0xff);
+			return int16;
+		}
+
+		private function readLat():Number {
+			var fraction:int;
+
+			while (stream.bytesAvailable < 2) {
+			}
+
+			fraction = (stream.readByte() & 0xff) << 8;
+			fraction = fraction + (stream.readByte() & 0xff);
+    		return ((Number(fraction) / 65536.0) + 40.0);
+		}
+		
+		private function readLon():Number {
+			var fraction:int;
+			var lon:Number;
+
+			while (stream.bytesAvailable < 3) {
+			}
+
+	    	lon = Number(stream.readByte() + 70);
+			fraction = (stream.readByte() & 0xff) << 8;
+			fraction = fraction + (stream.readByte() & 0xff);
+	    	lon = lon + (Number(fraction) / 65536.0);
+	    	lon = -lon;
+			return lon;
+		}

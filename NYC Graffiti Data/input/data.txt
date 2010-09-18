@@ -1,0 +1,8 @@
+The full dataset is available on New York City's datamine.  We use a subset of the data.  The following is a sample of the subset of graffiti data:
+
+Status	Date		Latitude	Longitude	Borough		Description
+
+Closed	09/08/08	40.7942		-73.9707	MANHATTAN	Cleaning crew dispatched. No graffiti on property.
+Closed	09/08/08	40.8477		-73.8877	BRONX	Cleaning crew dispatched.  Property cleaned.
+Closed	09/08/08	40.6357		-73.9767	BROOKLYN	Cleaning crew dispatched.  Property cleaned.
+Closed	09/08/08	40.6262		-74.1594	STATEN ISLAND	Cleaning crew dispatched.  Property cleaned.
