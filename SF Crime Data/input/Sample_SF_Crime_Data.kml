@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2">
+
+<Placemark id="Incident  100595567">
+<name>Incident  100595567</name>
+<description><![CDATA[<center><table><tr><th colspan='2' align='center'><em><a href="http://www.sfgov.org/site/police_index.asp">San Francisco Police Department</a></em></th></tr><tr bgcolor="#E3E3F3"><th>Category</th><td>Vehicle Theft</td></tr><tr bgcolor=""><th>Description</th><td>Stolen automobile</td></tr><tr bgcolor="#E3E3F3"><th>Resolution</th><td>None</td></tr><tr bgcolor=""><th>Day</th><td>Sunday</td></tr><tr bgcolor="#E3E3F3"><th>Date</th><td>06/27/2010</td></tr><tr bgcolor=""><th>Time</th><td>01:00</td></tr><tr bgcolor=""><th>Location</th><td>300 Block of SPRUCE ST</td></tr><tr bgcolor="#E3E3F3"><th>Police&nbsp;District</th><td>Richmond</td></tr><tr><td colspan='2' align='center'><a href="http://DataSF.org/page.php?page=TOU">Terms of Use</a></td></tr></table></center>]]></description>
+<styleUrl>#PropertyIncidentStyler</styleUrl>
+<ExtendedData>
+<SchemaData schemaUrl="#CrimeIncident">
+<SimpleData name="Incident">100595567</SimpleData>
+<SimpleData name="Category">Vehicle Theft</SimpleData>
+<SimpleData name="Description">Stolen automobile</SimpleData>
+<SimpleData name="Day">Sunday</SimpleData>
+<SimpleData name="Date">06/27/2010</SimpleData>
+<SimpleData name="Time">01:00</SimpleData>
+<SimpleData name="PoliceDistrict">Richmond</SimpleData>
+<SimpleData name="Resolution">None</SimpleData>
+</SchemaData>
+</ExtendedData>
+<Point>
+<coordinates>-122.453627442872,37.7882166990739,0 </coordinates>
+</Point>
+</Placemark>
+</kml>
